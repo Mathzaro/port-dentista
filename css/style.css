@@ -1,0 +1,364 @@
+/* =============================================================
+   Dra. Helena Prado · Odontologia — folha de estilos
+   Abordagem: mobile first (estilos base para celular e
+   media queries com min-width para telas maiores).
+   ============================================================= */
+
+/* ---------- 1. Variáveis (tokens de design) ---------- */
+:root {
+  /* Cores */
+  --porcelana: #f4f8f8;   /* fundo: branco frio, como louça */
+  --tinta:     #10323a;   /* texto principal: verde-petróleo escuro */
+  --esmalte:   #2c6e8a;   /* azul de apoio */
+  --menta:     #cdebe1;   /* fundos suaves */
+  --ambar:     #f2b544;   /* destaque pontual (brilho, foco) */
+  --branco:    #ffffff;
+  --texto-suave: #3d5c63;
+
+  /* Tipografia */
+  --fonte-titulo: "Bricolage Grotesque", system-ui, sans-serif;
+  --fonte-texto:  "Atkinson Hyperlegible", system-ui, sans-serif;
+
+  /* Escala tipográfica (razão ~1.25) */
+  --t-0: 1rem;
+  --t-1: 1.25rem;
+  --t-2: 1.563rem;
+  --t-3: 1.953rem;
+  --t-4: clamp(2.4rem, 6vw + 1rem, 4.4rem);
+
+  /* Espaçamentos */
+  --esp-1: 0.5rem;
+  --esp-2: 1rem;
+  --esp-3: 1.5rem;
+  --esp-4: 2.5rem;
+  --esp-5: 4rem;
+
+  --raio: 14px;
+  --largura-max: 72rem;
+}
+
+/* ---------- 2. Reset básico ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--fonte-texto);
+  font-size: var(--t-0);
+  line-height: 1.6;
+  color: var(--tinta);
+  background: var(--porcelana);
+}
+
+h1, h2, h3 {
+  font-family: var(--fonte-titulo);
+  line-height: 1.1;
+  margin: 0 0 var(--esp-2);
+}
+
+p { margin: 0 0 var(--esp-2); max-width: 65ch; }
+
+a { color: var(--esmalte); }
+
+/* Foco visível para quem navega pelo teclado */
+:focus-visible {
+  outline: 3px solid var(--ambar);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--largura-max);
+  margin-inline: auto;
+  padding-inline: var(--esp-3);
+}
+
+/* Link escondido que aparece ao apertar Tab: acessibilidade */
+.pular-conteudo {
+  position: absolute;
+  left: var(--esp-2);
+  top: -4rem;
+  background: var(--tinta);
+  color: var(--branco);
+  padding: var(--esp-1) var(--esp-2);
+  border-radius: 6px;
+  z-index: 10;
+}
+.pular-conteudo:focus { top: var(--esp-2); }
+
+/* ---------- 3. Botões e links ---------- */
+.botao {
+  display: inline-block;
+  background: var(--tinta);
+  color: var(--porcelana);
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.85rem 1.5rem;
+  border-radius: 999px;
+  transition: background-color 0.2s;
+}
+.botao:hover { background: var(--esmalte); }
+.botao--pequeno { padding: 0.55rem 1.1rem; font-size: 0.95rem; white-space: nowrap; }
+
+.link-seta {
+  font-weight: 700;
+  color: var(--tinta);
+  text-underline-offset: 4px;
+}
+
+/* ---------- 4. Cabeçalho ---------- */
+.cabecalho {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: rgba(244, 248, 248, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--menta);
+}
+
+.cabecalho__interno {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--esp-2);
+  padding-block: var(--esp-2);
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: var(--esp-1);
+  color: var(--tinta);
+  text-decoration: none;
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: var(--t-1);
+  line-height: 1;
+  white-space: nowrap;
+}
+.marca small {
+  display: block;
+  font-family: var(--fonte-texto);
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: var(--texto-suave);
+  margin-top: 2px;
+}
+.marca__icone { width: 30px; height: 30px; fill: var(--esmalte); }
+
+/* No celular o menu fica escondido (o menu mobile com JavaScript entra numa próxima versão) */
+.menu { display: none; }
+
+/* ---------- 5. Hero ---------- */
+.hero { padding-block: var(--esp-4) var(--esp-5); }
+
+.hero__interno {
+  display: grid;
+  gap: var(--esp-4);
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: var(--t-4);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  max-width: 14ch;
+}
+
+.hero__lead {
+  font-size: var(--t-1);
+  color: var(--texto-suave);
+  max-width: 44ch;
+}
+
+.hero__acoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--esp-3);
+  margin-top: var(--esp-3);
+}
+
+.hero__ilustracao { margin: 0; }
+.hero__ilustracao svg { width: 100%; max-width: 460px; display: block; margin-inline: auto; }
+
+.sorriso__labio { fill: var(--esmalte); }
+.sorriso__dentes rect {
+  fill: var(--branco);
+  stroke: var(--tinta);
+  stroke-width: 3;
+}
+.sorriso__brilho { fill: var(--ambar); }
+
+/* Única animação da página: os dentes aparecem um a um quando a página carrega */
+@media (prefers-reduced-motion: no-preference) {
+  .sorriso__dentes rect {
+    transform-box: fill-box;
+    transform-origin: center bottom;
+    animation: dente-surge 0.5s cubic-bezier(.3, 1.4, .5, 1) both;
+  }
+  .sorriso__dentes rect:nth-child(2) { animation-delay: 0.08s; }
+  .sorriso__dentes rect:nth-child(3) { animation-delay: 0.16s; }
+  .sorriso__dentes rect:nth-child(4) { animation-delay: 0.24s; }
+  .sorriso__dentes rect:nth-child(5) { animation-delay: 0.32s; }
+  .sorriso__brilho {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: brilho 0.6s 0.6s ease-out both;
+  }
+}
+
+@keyframes dente-surge {
+  from { transform: scaleY(0); }
+  to   { transform: scaleY(1); }
+}
+@keyframes brilho {
+  from { transform: scale(0) rotate(-45deg); opacity: 0; }
+  to   { transform: scale(1) rotate(0); opacity: 1; }
+}
+
+/* ---------- 6. Seções ---------- */
+.secao { padding-block: var(--esp-5); }
+.secao h2 { font-size: var(--t-3); font-weight: 800; letter-spacing: -0.01em; }
+
+/* Sobre */
+.sobre { background: var(--branco); }
+.sobre__interno { display: grid; gap: var(--esp-3); }
+.sobre__fatos {
+  list-style: none;
+  padding: 0;
+  margin: var(--esp-3) 0 0;
+  display: grid;
+  gap: var(--esp-1);
+}
+.sobre__fatos li { padding-left: 1.2rem; position: relative; }
+.sobre__fatos li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--esmalte);
+}
+
+/* Tratamentos: lista de definições, separada por linhas finas (não cards) */
+.lista-tratamentos {
+  margin: var(--esp-3) 0 0;
+  display: grid;
+  border-top: 2px solid var(--tinta);
+}
+.tratamento {
+  padding-block: var(--esp-3);
+  border-bottom: 1px solid var(--menta);
+}
+.tratamento dt {
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  font-size: var(--t-2);
+  margin-bottom: var(--esp-1);
+}
+.tratamento dd { margin: 0; color: var(--texto-suave); max-width: 50ch; }
+
+/* Primeira consulta: passos numerados (é uma sequência de verdade) */
+.consulta { background: var(--menta); }
+.passos {
+  list-style: none;
+  counter-reset: passo;
+  padding: 0;
+  margin: var(--esp-3) 0 0;
+  display: grid;
+  gap: var(--esp-4);
+}
+.passos li { counter-increment: passo; }
+.passos li::before {
+  content: counter(passo);
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--tinta);
+  color: var(--porcelana);
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: var(--t-1);
+  margin-bottom: var(--esp-2);
+}
+.passos h3 { font-size: var(--t-1); margin-bottom: var(--esp-1); }
+
+/* Depoimentos */
+.aviso-ficticio { font-size: 0.9rem; color: var(--texto-suave); font-style: italic; }
+.lista-depoimentos { display: grid; gap: var(--esp-4); margin-top: var(--esp-3); }
+.depoimento {
+  margin: 0;
+  padding-left: var(--esp-3);
+  border-left: 4px solid var(--esmalte);
+}
+.depoimento p { font-size: var(--t-1); line-height: 1.45; }
+.depoimento footer { font-weight: 700; color: var(--texto-suave); }
+
+/* Contato */
+.contato { background: var(--tinta); color: var(--porcelana); }
+.contato a { color: var(--menta); }
+.contato .botao { background: var(--ambar); color: var(--tinta); margin-top: var(--esp-3); }
+.contato .botao:hover { background: var(--menta); }
+.contato__interno { display: grid; gap: var(--esp-4); }
+.endereco { font-style: normal; font-size: var(--t-1); line-height: 1.7; }
+
+.horarios { width: 100%; border-collapse: collapse; align-self: start; }
+.horarios caption {
+  text-align: left;
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  font-size: var(--t-1);
+  padding-bottom: var(--esp-2);
+}
+.horarios th, .horarios td {
+  text-align: left;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(205, 235, 225, 0.25);
+}
+.horarios th { font-weight: 400; padding-right: var(--esp-2); }
+.horarios td { font-weight: 700; }
+
+/* Rodapé */
+.rodape {
+  background: var(--tinta);
+  color: var(--menta);
+  border-top: 1px solid rgba(205, 235, 225, 0.2);
+  font-size: 0.9rem;
+}
+.rodape__interno { padding-block: var(--esp-3); }
+.rodape p { margin: 0.2rem 0; }
+
+/* ---------- 7. Telas maiores ---------- */
+@media (min-width: 48rem) {
+  .menu {
+    display: flex;
+    gap: var(--esp-3);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .menu a { color: var(--tinta); text-decoration: none; font-weight: 700; }
+  .menu a:hover { color: var(--esmalte); text-decoration: underline; text-underline-offset: 4px; }
+
+  .lista-tratamentos { grid-template-columns: 1fr 1fr; column-gap: var(--esp-5); }
+  .passos { grid-template-columns: repeat(3, 1fr); }
+  .lista-depoimentos { grid-template-columns: repeat(3, 1fr); }
+  .contato__interno { grid-template-columns: 1fr 1fr; }
+  .sobre__interno { grid-template-columns: 1fr 2fr; }
+}
+
+@media (min-width: 64rem) {
+  .hero__interno { grid-template-columns: 1.1fr 1fr; }
+  .hero { padding-block: var(--esp-5) 6rem; }
+}
+
+/* ---------- 8. Celulares bem estreitos ---------- */
+/* O botão do topo sai, já que o hero tem o mesmo botão logo abaixo */
+@media (max-width: 26rem) {
+  .cabecalho .botao--pequeno { display: none; }
+}

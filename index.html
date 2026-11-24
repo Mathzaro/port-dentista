@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dra. Helena Prado · Odontologia</title>
+  <meta name="description" content="Consultório odontológico da Dra. Helena Prado: limpeza, clareamento, ortodontia e implantes, com atendimento sem pressa.">
+
+  <!-- Fontes: Bricolage Grotesque (títulos) e Atkinson Hyperlegible (texto, pensada para leitura fácil) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- ===================== CABEÇALHO ===================== -->
+  <header class="cabecalho">
+    <div class="container cabecalho__interno">
+      <a class="marca" href="#inicio" aria-label="Dra. Helena Prado, página inicial">
+        <svg class="marca__icone" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M9 4c-3 0-5 2.5-5 6 0 4 1.5 6.5 2.5 10S8 28 10.5 28c2 0 2.2-4 3-7 .5-1.8 1.3-2.5 2.5-2.5s2 .7 2.5 2.5c.8 3 1 7 3 7C24 28 24.5 23.5 25.5 20S28 14 28 10c0-3.5-2-6-5-6-2.5 0-4 1.5-7 1.5S11.5 4 9 4Z"/>
+        </svg>
+        <span>Helena Prado <small>Odontologia</small></span>
+      </a>
+
+      <nav aria-label="Navegação principal">
+        <ul class="menu">
+          <li><a href="#tratamentos">Tratamentos</a></li>
+          <li><a href="#primeira-consulta">Primeira consulta</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+          <li><a href="#contato">Horários e endereço</a></li>
+        </ul>
+      </nav>
+
+      <a class="botao botao--pequeno" href="#contato">Agendar consulta</a>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="inicio">
+      <div class="container hero__interno">
+        <div class="hero__texto">
+          <h1>Dentista sem pressa, do jeito que deveria ser.</h1>
+          <p class="hero__lead">
+            Consultas de uma hora, explicação de cada passo antes de começar
+            e orçamento por escrito. Para quem tem medo de dentista
+            e para quem só não tem tempo a perder.
+          </p>
+          <div class="hero__acoes">
+            <a class="botao" href="#contato">Agendar consulta</a>
+            <a class="link-seta" href="#tratamentos">Ver tratamentos</a>
+          </div>
+        </div>
+
+        <!-- Ilustração própria em SVG: um sorriso que se desenha ao carregar -->
+        <figure class="hero__ilustracao" aria-hidden="true">
+          <svg viewBox="20 30 360 220">
+            <path class="sorriso__labio" d="M40 120 C120 70, 280 70, 360 120 C300 250, 100 250, 40 120 Z"/>
+            <g class="sorriso__dentes">
+              <rect x="88"  y="112" width="44" height="58" rx="14"/>
+              <rect x="136" y="104" width="40" height="70" rx="14"/>
+              <rect x="180" y="100" width="40" height="74" rx="14"/>
+              <rect x="224" y="104" width="40" height="70" rx="14"/>
+              <rect x="268" y="112" width="44" height="58" rx="14"/>
+            </g>
+            <path class="sorriso__brilho" d="M300 70 l8 -22 l8 22 l22 8 l-22 8 l-8 22 l-8 -22 l-22 -8 Z"/>
+          </svg>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===================== SOBRE ===================== -->
+    <section class="secao sobre" aria-labelledby="titulo-sobre">
+      <div class="container sobre__interno">
+        <h2 id="titulo-sobre">Quem vai cuidar de você</h2>
+        <div class="sobre__texto">
+          <p>
+            Sou a Helena, cirurgiã-dentista há 12 anos. Montei este consultório
+            pequeno de propósito: atendo um paciente por vez, sem fila na recepção
+            e sem tratamento empurrado.
+          </p>
+          <p>
+            Antes de qualquer procedimento, você vê a radiografia comigo,
+            entende o que está acontecendo e decide o que fazer.
+            Se não for urgente, a gente pode esperar.
+          </p>
+          <ul class="sobre__fatos">
+            <li><strong>12 anos</strong> de clínica geral</li>
+            <li><strong>Especialização</strong> em ortodontia</li>
+            <li><strong>Atendimento</strong> a crianças a partir de 3 anos</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TRATAMENTOS ===================== -->
+    <section class="secao tratamentos" id="tratamentos" aria-labelledby="titulo-tratamentos">
+      <div class="container">
+        <h2 id="titulo-tratamentos">Tratamentos</h2>
+        <dl class="lista-tratamentos">
+          <div class="tratamento">
+            <dt>Limpeza e prevenção</dt>
+            <dd>Remoção de tártaro, polimento e aplicação de flúor. Recomendado a cada seis meses.</dd>
+          </div>
+          <div class="tratamento">
+            <dt>Restaurações</dt>
+            <dd>Tratamento de cáries com resina da cor do dente, feito em uma sessão na maioria dos casos.</dd>
+          </div>
+          <div class="tratamento">
+            <dt>Clareamento</dt>
+            <dd>Clareamento caseiro com moldeira sob medida ou no consultório, com avaliação de sensibilidade antes.</dd>
+          </div>
+          <div class="tratamento">
+            <dt>Ortodontia</dt>
+            <dd>Aparelho fixo, autoligado ou alinhadores transparentes, para adolescentes e adultos.</dd>
+          </div>
+          <div class="tratamento">
+            <dt>Implantes</dt>
+            <dd>Reposição de dentes perdidos com planejamento a partir de tomografia.</dd>
+          </div>
+          <div class="tratamento">
+            <dt>Odontopediatria</dt>
+            <dd>Primeira consulta da criança com adaptação, sem pressa para começar o tratamento.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ===================== PRIMEIRA CONSULTA (é uma sequência real, por isso numerada) ===================== -->
+    <section class="secao consulta" id="primeira-consulta" aria-labelledby="titulo-consulta">
+      <div class="container">
+        <h2 id="titulo-consulta">Como é a primeira consulta</h2>
+        <ol class="passos">
+          <li>
+            <h3>Conversa</h3>
+            <p>Você conta o que incomoda e o seu histórico. Se tiver medo, é a hora de falar.</p>
+          </li>
+          <li>
+            <h3>Avaliação</h3>
+            <p>Exame clínico e, se precisar, radiografia no próprio consultório.</p>
+          </li>
+          <li>
+            <h3>Plano por escrito</h3>
+            <p>Você sai com o diagnóstico, as opções de tratamento e o valor de cada uma.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===================== DEPOIMENTOS ===================== -->
+    <section class="secao depoimentos" id="depoimentos" aria-labelledby="titulo-depoimentos">
+      <div class="container">
+        <h2 id="titulo-depoimentos">O que dizem os pacientes</h2>
+        <p class="aviso-ficticio">Depoimentos fictícios, criados para este projeto de portfólio.</p>
+        <div class="lista-depoimentos">
+          <blockquote class="depoimento">
+            <p>Passei dez anos sem ir ao dentista por medo. A doutora me mostrou tudo na tela antes de encostar em mim.</p>
+            <footer>Marina, 34 anos</footer>
+          </blockquote>
+          <blockquote class="depoimento">
+            <p>Meu filho saiu da consulta pedindo para voltar. Nunca achei que fosse ouvir isso.</p>
+            <footer>Rodrigo, pai do Theo</footer>
+          </blockquote>
+          <blockquote class="depoimento">
+            <p>Recebi o orçamento por escrito e sem surpresa no final. Fiz o alinhador em 14 meses.</p>
+            <footer>Juliana, 27 anos</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTATO ===================== -->
+    <section class="secao contato" id="contato" aria-labelledby="titulo-contato">
+      <div class="container contato__interno">
+        <div>
+          <h2 id="titulo-contato">Horários e endereço</h2>
+          <address class="endereco">
+            Rua das Acácias, 120, sala 4<br>
+            Centro, Cidade Exemplo<br>
+            Telefone: <a href="tel:+5500900000000">(00) 90000-0000</a><br>
+            E-mail: <a href="mailto:contato@exemplo.com">contato@exemplo.com</a>
+          </address>
+          <a class="botao" href="tel:+5500900000000">Ligar para agendar</a>
+        </div>
+
+        <table class="horarios">
+          <caption>Horário de atendimento</caption>
+          <tbody>
+            <tr><th scope="row">Segunda a quinta</th><td>8h às 18h</td></tr>
+            <tr><th scope="row">Sexta</th><td>8h às 14h</td></tr>
+            <tr><th scope="row">Sábado</th><td>8h às 12h, um sábado por mês</td></tr>
+            <tr><th scope="row">Domingo</th><td>Fechado</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape__interno">
+      <p>Dra. Helena Prado · Odontologia</p>
+      <p>Site fictício, criado como projeto de portfólio por Matheus de Freitas Cunha.</p>
+    </div>
+  </footer>
+</body>
+</html>
